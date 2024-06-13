@@ -1,3 +1,3 @@
-# react-movie-db
+# React MovieDB
 
 A small react application showcasing a list of movies
