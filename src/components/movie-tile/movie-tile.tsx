@@ -1,6 +1,8 @@
 import React from "react"
 import MovieImage from "../movie-image/movie-image"
+import Badge from "../badge/badge"
 import "./movie-tile.css"
+
 type Props = {
   movieData: any
 }
@@ -8,10 +10,9 @@ type Props = {
 const MovieTile: React.FC<Props> = props => {
   const { movieData } = props
 
-  console.log(movieData)
-
   return (
     <div className="movie-tile-container">
+      <Badge />
       <div className="tile-left-container">
         <MovieImage path={movieData?.poster_path} label={movieData?.title} />
       </div>

@@ -10,7 +10,8 @@ import { POPULAR_MOVIES } from "./utils/strings"
 import "./styles/App.css"
 
 function App() {
-  const [movieList, setMovieList] = useState<object[]>([])
+  //State variables
+  const [movieList, setMovieList] = useState<any[]>([])
   const [showSpinner, setShowSpinner] = useState<boolean>(true)
 
   useEffect(() => {
@@ -31,7 +32,7 @@ function App() {
           <h1>{POPULAR_MOVIES}</h1>
           <div>
             {movieList.map(movie => (
-              <MovieTile movieData={movie} />
+              <MovieTile key={movie?.id} movieData={movie} />
             ))}
           </div>
         </>
