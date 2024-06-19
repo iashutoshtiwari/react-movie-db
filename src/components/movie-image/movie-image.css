@@ -1,0 +1,9 @@
+.movie-image-container {
+  padding: 12px;
+  width: 150px;
+  display: flex;
+}
+
+.movie-image {
+  width: 100%;
+}

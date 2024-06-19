@@ -1,0 +1,12 @@
+.movie-tile-container {
+  height: 250px;
+  min-width: 350px;
+  width: 100%;
+  border: 5px solid #c3f3c0;
+  border-radius: 12px;
+  box-shadow: 5px 10px #0000008d;
+  margin: 18px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}

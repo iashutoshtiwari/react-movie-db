@@ -1,11 +1,20 @@
+import React from "react"
 import { TMDB_BASE_IMAGE_URL } from "../../utils/strings"
+import "./movie-image.css"
 
-const MovieImage = ({ path, label }) => {
+type Props = {
+  path: string
+  label: string
+}
+
+const MovieImage: React.FC<Props> = props => {
+  const { path, label } = props
+
   const imagePath = TMDB_BASE_IMAGE_URL + path
-  console.log(path)
+
   return (
-    <div>
-      <img src={imagePath} aria-label={label} />
+    <div className="movie-image-container">
+      <img className="movie-image" src={imagePath} aria-label={label} />
     </div>
   )
 }

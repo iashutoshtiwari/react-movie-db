@@ -1,31 +1,41 @@
 import { useEffect, useState } from "react"
-import "./styles/App.css"
+
 import { getPopularMovies } from "./api/api"
+
 import Spinner from "./components/spinner/spinner"
-import MovieImage from "./components/movie-image/movie-image"
+import MovieTile from "./components/movie-tile/movie-tile"
+
+import { POPULAR_MOVIES } from "./utils/strings"
+
+import "./styles/App.css"
 
 function App() {
-  const [movieList, setMovieList] = useState([])
-  const [showSpinner, setShowSpinner] = useState(true)
+  const [movieList, setMovieList] = useState<object[]>([])
+  const [showSpinner, setShowSpinner] = useState<boolean>(true)
 
   useEffect(() => {
     setTimeout(() => {
       getPopularMovies().then(data => {
-        console.log(data)
         setMovieList(data?.results)
         setShowSpinner(false)
       })
-    }, 2000)
+    }, 3000)
   }, [])
 
-  return showSpinner ? (
-    <Spinner />
-  ) : (
-    <div>
-      <h1>Test</h1>
-      {movieList.map(movie => (
-        <MovieImage path={movie?.poster_path} />
-      ))}
+  return (
+    <div className="main-container">
+      {showSpinner ? (
+        <Spinner />
+      ) : (
+        <>
+          <h1>{POPULAR_MOVIES}</h1>
+          <div>
+            {movieList.map(movie => (
+              <MovieTile movieData={movie} />
+            ))}
+          </div>
+        </>
+      )}
     </div>
   )
 }
