@@ -1,0 +1,32 @@
+.dialog-modal {
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
+  background: #a599b5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(4px);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-content {
+  font-size: 16px;
+  padding: 4px 0;
+}

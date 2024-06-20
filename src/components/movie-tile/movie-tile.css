@@ -11,3 +11,19 @@
   align-items: center;
   cursor: pointer;
 }
+
+.tile-right-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tile-title {
+  font-size: 36px;
+  font-weight: 600;
+  padding-right: 10px;
+}
+
+.tile-rating {
+  font-size: 24px;
+  font-weight: 600;
+}

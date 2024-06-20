@@ -1,22 +1,49 @@
-import React from "react"
+import React, { useState } from "react"
 import MovieImage from "../movie-image/movie-image"
 import Badge from "../badge/badge"
 import "./movie-tile.css"
+import { extractYear } from "../../utils/utility"
 
+/************************************************************
+ *Name: MovieTile
+ *Description: A Tile with basic info of the movie
+ ************************************************************/
+
+//Prop type
 type Props = {
   movieData: any
+  setModalData: any
+  setShowModal: any
 }
 
 const MovieTile: React.FC<Props> = props => {
-  const { movieData } = props
+  //Props
+  const { movieData, setModalData, setShowModal } = props
+
+  //State variables
+  const [showBadge, setShowBadge] = useState(false)
+
+  const releaseYear = extractYear(movieData?.release_date)
+
+  //CTA methods
+  const onMovieTileClick = () => {
+    setShowBadge(true)
+    setModalData(movieData)
+    setShowModal(true)
+  }
 
   return (
-    <div className="movie-tile-container">
-      <Badge />
+    <div onClick={onMovieTileClick} className="movie-tile-container">
+      {showBadge && <Badge />}
       <div className="tile-left-container">
         <MovieImage path={movieData?.poster_path} label={movieData?.title} />
       </div>
-      <div className="tile-right-container">{movieData?.title}</div>
+      <div className="tile-right-container">
+        <span className="tile-title">{`${movieData?.title} (${releaseYear})`}</span>
+        <span className="tile-rating">
+          Rating: {movieData?.vote_average.toFixed(1)}
+        </span>
+      </div>
     </div>
   )
 }

@@ -1,10 +1,10 @@
 .badge {
   position: absolute;
-  top: 6px;
+  top: 4px;
   left: 4px;
   background-color: #62a87c;
   color: white;
   padding: 4px 8px;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 6px;
 }
