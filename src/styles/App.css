@@ -18,6 +18,10 @@ body {
   padding: 12px;
 }
 
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
 h1 {
   font-size: 64px;
   text-align: center;
