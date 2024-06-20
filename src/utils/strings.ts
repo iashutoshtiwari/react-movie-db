@@ -8,3 +8,4 @@ export const RELEASE = "Release Date: "
 export const ERROR_TITLE = "Oops !"
 export const ERROR_MSG =
   "The data could not be retrieved at this moment, please try again later."
+export const RATING = "Rating: "

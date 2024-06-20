@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 import MovieImage from "../movie-image/movie-image"
 import Badge from "../badge/badge"
-import "./movie-tile.css"
 import { extractYear } from "../../utils/utility"
+import { RATING } from "../../utils/strings"
+import "./movie-tile.css"
 
 /************************************************************
  *Name: MovieTile
@@ -41,7 +42,7 @@ const MovieTile: React.FC<Props> = props => {
       <div className="tile-right-container">
         <span className="tile-title">{`${movieData?.title} (${releaseYear})`}</span>
         <span className="tile-rating">
-          Rating: {movieData?.vote_average.toFixed(1)}
+          {RATING + movieData?.vote_average.toFixed(1)}
         </span>
       </div>
     </div>
