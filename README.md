@@ -23,6 +23,11 @@ https://reactmdb.vercel.app/
 | `api_token` | `string` | **Required**. API token |
 
 
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`VITE_TMDB_API_TOKEN`
 
 
 ## Run Locally
